@@ -1,0 +1,1 @@
+docker-compose -f dbases.yml down --rmi all

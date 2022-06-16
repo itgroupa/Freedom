@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+            
+    freedom_auth_redis:
+        image: "redis:alpine"
+        container_name: 'freedom_auth_redis_con'
+        command: redis-server --requirepass password
+        ports:
+            - "2001:6379"
+         
+        restart: always
+        depends_on:
+            - freedom_auth_mongo
+        networks:
+            - freedom_auth
+
+    freedom_auth_mongo:
+        image: mongo
+        restart: always
+        container_name: 'freedom_auth_mongo_con'
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: password
+            MONGO_INITDB_DATABASE: freedom_auth_db
+            ME_CONFIG_MONGODB_URL: mongodb://localhost:27017
+        ports:
+            - "27017:27017"
+        networks:
+            - freedom_auth
+
+
+networks:
+    freedom_auth:
+        driver: bridge
