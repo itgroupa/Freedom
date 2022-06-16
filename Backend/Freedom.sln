@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{94E372C9-9351-4843-B57C-B473A6EA15D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freedom.Auth.Web", "src\Freedom.Auth.Web\Freedom.Auth.Web.csproj", "{946ADCBB-1EAB-4225-B5FC-EE5E478779D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Access", "Access", "{5238C331-C8C1-4FF4-8065-EC8C8F89AB29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freedom.Access.Redis", "src\Freedom.Access.Redis\Freedom.Access.Redis.csproj", "{EFBC5148-CAEF-4770-BD7C-CA82944224EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CA94A5D5-8630-43DF-9603-5D1AA15F212C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freedom.Common.Json", "src\Freedom.Common.Json\Freedom.Common.Json.csproj", "{389883B8-171A-4ED6-BD06-45C422FFCCED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{946ADCBB-1EAB-4225-B5FC-EE5E478779D9} = {94E372C9-9351-4843-B57C-B473A6EA15D5}
+		{EFBC5148-CAEF-4770-BD7C-CA82944224EB} = {5238C331-C8C1-4FF4-8065-EC8C8F89AB29}
+		{389883B8-171A-4ED6-BD06-45C422FFCCED} = {CA94A5D5-8630-43DF-9603-5D1AA15F212C}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{946ADCBB-1EAB-4225-B5FC-EE5E478779D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946ADCBB-1EAB-4225-B5FC-EE5E478779D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946ADCBB-1EAB-4225-B5FC-EE5E478779D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946ADCBB-1EAB-4225-B5FC-EE5E478779D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFBC5148-CAEF-4770-BD7C-CA82944224EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBC5148-CAEF-4770-BD7C-CA82944224EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBC5148-CAEF-4770-BD7C-CA82944224EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBC5148-CAEF-4770-BD7C-CA82944224EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389883B8-171A-4ED6-BD06-45C422FFCCED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389883B8-171A-4ED6-BD06-45C422FFCCED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389883B8-171A-4ED6-BD06-45C422FFCCED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389883B8-171A-4ED6-BD06-45C422FFCCED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,42 @@
+@page "/"
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+
+@inject ProtectedLocalStorage _protectedLocalStorage
+
+
+<PageTitle>Index</PageTitle>
+
+<h1 @onclick="Increment">Set</h1>
+
+<h1 @onclick="GetParams">Get</h1>
+
+Welcome to your new app. @Val
+
+@code
+{
+    private string? Val { get; set; }
+
+    class Temp
+    {
+        public string A { get; set; }
+        public string B { get; set; }
+    }
+
+    private async Task GetParams()
+    {
+        var temp = await _protectedLocalStorage.GetAsync<Temp>("storage");
+
+        Val = temp.Value?.A;
+    }
+
+    private async Task Increment()
+    {
+        var val = new Temp
+        {
+            A = Guid.NewGuid().ToString(),
+            B = Guid.NewGuid().ToString()
+        };
+
+        await _protectedLocalStorage.SetAsync("storage", val);
+    }
+}
