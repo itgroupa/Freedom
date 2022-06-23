@@ -6,4 +6,10 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Freedom.Auth.Business\Freedom.Auth.Business.csproj" />
+      <ProjectReference Include="..\Freedom.Auth.Cache\Freedom.Auth.Cache.csproj" />
+      <ProjectReference Include="..\Freedom.Auth.Dal\Freedom.Auth.Dal.csproj" />
+    </ItemGroup>
+
 </Project>
