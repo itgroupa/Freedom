@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Freedom.Common.Crypto\Freedom.Common.Crypto.csproj" />
+      <ProjectReference Include="..\..\Common\Freedom.Common.Json\Freedom.Common.Json.csproj" />
     </ItemGroup>
 
 </Project>

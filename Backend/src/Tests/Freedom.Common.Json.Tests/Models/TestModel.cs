@@ -2,5 +2,5 @@
 
 internal class TestModel
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 }

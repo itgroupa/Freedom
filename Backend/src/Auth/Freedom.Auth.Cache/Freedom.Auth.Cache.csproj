@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Freedom.Access.Redis\Freedom.Access.Redis.csproj" />
+      <ProjectReference Include="..\..\Access\Freedom.Access.Redis\Freedom.Access.Redis.csproj" />
       <ProjectReference Include="..\Freedom.Auth.DataSchema\Freedom.Auth.DataSchema.csproj" />
     </ItemGroup>
 

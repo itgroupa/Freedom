@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Freedom.Auth.Web\Freedom.Auth.Web.csproj" />
+      <ProjectReference Include="..\..\Auth\Freedom.Auth.Web\Freedom.Auth.Web.csproj" />
       <ProjectReference Include="..\Freedom.Tests.Utils\Freedom.Tests.Utils.csproj" />
     </ItemGroup>
 

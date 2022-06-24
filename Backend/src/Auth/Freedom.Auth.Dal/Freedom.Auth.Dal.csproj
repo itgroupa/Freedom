@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Freedom.Access.Mongo\Freedom.Access.Mongo.csproj" />
+      <ProjectReference Include="..\..\Access\Freedom.Access.Mongo\Freedom.Access.Mongo.csproj" />
       <ProjectReference Include="..\Freedom.Auth.DataSchema\Freedom.Auth.DataSchema.csproj" />
     </ItemGroup>
 
