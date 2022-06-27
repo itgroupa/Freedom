@@ -12,4 +12,19 @@
       <ProjectReference Include="..\Freedom.Auth.Dal\Freedom.Auth.Dal.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\Translate.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Translate.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\Translate.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Translate.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>

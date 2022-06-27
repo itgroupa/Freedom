@@ -1,7 +1,6 @@
 using Freedom.Auth.Business;
 using Freedom.Auth.Cache;
 using Freedom.Auth.Dal;
-using Freedom.Auth.DataSchema;
 using Freedom.Common.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +11,7 @@ var mongoConfiguration = builder.Configuration.GetSection("Mongo");
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddLocalization();
 
 builder.Services.AddMapperFiles();
 
