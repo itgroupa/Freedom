@@ -28,6 +28,8 @@ public static class RegistryExtension
 
     private static void ServiceRegistry(IServiceCollection serviceCollection)
     {
-        serviceCollection.AddTransient<IUserCacheService, UserCacheService>();
+        serviceCollection.AddTransient<IUserCacheService, UserCacheService>()
+            .AddTransient<ICertificateCacheService, CertificateCacheService>()
+            .AddTransient<IClientCacheService, ClientCacheService>();
     }
 }

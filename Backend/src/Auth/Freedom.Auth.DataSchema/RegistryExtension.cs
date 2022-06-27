@@ -8,7 +8,9 @@ public static class RegistryExtension
 {
     public static IServiceCollection AddDataSchema(this IServiceCollection serviceCollection)
     {
-        serviceCollection.AddTransient<IUserSchemaService, UserSchemaService>();
+        serviceCollection.AddTransient<IUserSchemaService, UserSchemaService>()
+            .AddTransient<IClientSchemaService, ClientSchemaService>()
+            .AddTransient<ICertificateSchemaService, CertificateSchemaService>();
 
         return serviceCollection;
     }

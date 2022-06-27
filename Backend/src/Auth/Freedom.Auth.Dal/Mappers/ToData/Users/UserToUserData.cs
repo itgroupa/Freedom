@@ -2,7 +2,7 @@
 using Freedom.Auth.Dal.Models;
 using Freedom.Auth.DataSchema.Models.Users;
 
-namespace Freedom.Auth.Dal.Mappers.ToData;
+namespace Freedom.Auth.Dal.Mappers.ToData.Users;
 
 internal class UserToUserData : Profile
 {

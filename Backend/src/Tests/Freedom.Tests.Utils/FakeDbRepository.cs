@@ -8,7 +8,8 @@ namespace Freedom.Tests.Utils;
 public class FakeDbRepository : IDbRepository
 {
     private static readonly ConcurrentDictionary<string, ConcurrentBag<string>> Store =
-        new ();
+        new();
+
     public async Task<T?> GetOneByExpressionAsync<T>(Expression<Func<T, bool>> where) where T : class
     {
         var collection = GetCollection<T>();
@@ -27,6 +28,29 @@ public class FakeDbRepository : IDbRepository
         var result = elementCollection.Where(where.Compile());
 
         return await Task.FromResult(result.ToArray());
+    }
+
+    public async Task<long> CountAsync<T>(Expression<Func<T, bool>>? where = null) where T : class
+    {
+        var collection = GetCollection<T>();
+        var elementCollection = GetCollection<T>(collection);
+
+        return await Task.FromResult(where != null
+            ? elementCollection.Where(where.Compile()).Count()
+            : elementCollection.Count());
+    }
+
+    public async Task<T[]> GetAsync<T>(int page, int size, Expression<Func<T, bool>>? where = null) where T : class
+    {
+        var collection = GetCollection<T>();
+        var elementCollection = GetCollection<T>(collection);
+
+        var query = where != null
+            ? elementCollection.Where(where.Compile()).AsQueryable()
+            : elementCollection.AsQueryable();
+
+
+        return await Task.FromResult(query.Skip(page * size).Take(size).ToArray());
     }
 
     public async Task DeleteOneAsync<T>(Expression<Func<T, bool>> where) where T : class
@@ -108,7 +132,6 @@ public class FakeDbRepository : IDbRepository
         var collectionName = typeof(T).Name;
         if (Store.TryGetValue(collectionName, out var value))
         {
-
             return value;
         }
 

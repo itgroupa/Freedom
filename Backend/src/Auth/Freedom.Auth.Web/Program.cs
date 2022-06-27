@@ -17,7 +17,6 @@ builder.Services.AddMapperFiles();
 
 builder.Services.AddCache(redisConfiguration);
 builder.Services.AddDal(mongoConfiguration);
-builder.Services.AddDataSchema();
 builder.Services.AddBusiness();
 
 var app = builder.Build();

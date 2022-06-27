@@ -2,7 +2,7 @@
 using Freedom.Auth.Dal.Models;
 using Freedom.Auth.DataSchema.Models.Users;
 
-namespace Freedom.Auth.Dal.Mappers.FromData;
+namespace Freedom.Auth.Dal.Mappers.FromData.Users;
 
 internal class AddUserToUser : Profile
 {
@@ -10,6 +10,8 @@ internal class AddUserToUser : Profile
     {
         CreateMap<AddUserData, User>()
             .ForMember(r=>r.Id, r=>
-                r.MapFrom(m=>Guid.NewGuid()));
+                r.MapFrom(m=>Guid.NewGuid()))
+            .ForMember(r=>r.Role, r=>
+                r.Ignore());
     }
 }

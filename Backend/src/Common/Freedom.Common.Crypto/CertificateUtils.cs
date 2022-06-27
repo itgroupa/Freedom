@@ -7,11 +7,11 @@ namespace Freedom.Common.Crypto;
 
 public static class CertificateUtils
 {
-    public static X509Certificate2 GenerateSelfSignedCertificate(string name, DateTimeOffset expiration)
+    public static X509Certificate2 GenerateSelfSignedCertificate(string url, DateTimeOffset expiration)
     {
         var rsaKey = RSA.Create(2048);
 
-        var subject = $"CN={name}";
+        var subject = $"CN={url}";
 
         var certReq = new CertificateRequest(subject, rsaKey, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
         certReq.CertificateExtensions.Add(new X509BasicConstraintsExtension(true, false, 0, true));
@@ -22,9 +22,9 @@ public static class CertificateUtils
         return caCert;
     }
 
-    public static GeneratedCertificate GetCertificate(X509Certificate2 certificate, string name, DateTimeOffset expiration)
+    public static GeneratedCertificate GetCertificate(X509Certificate2 certificate, string url, DateTimeOffset expiration)
     {
-        var subject = $"CN={name}";
+        var subject = $"CN={url}";
 
         var clientKey = RSA.Create(2048);
 

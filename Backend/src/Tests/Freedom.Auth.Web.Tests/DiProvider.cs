@@ -16,7 +16,6 @@ public static class DiProvider
             .AddMapperFiles()
             .AddDal(new FakeDbRepository())
             .AddCache(new FakeCacheRepository())
-            .AddDataSchema()
             .AddBusiness();
 
         return collection

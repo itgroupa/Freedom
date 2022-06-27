@@ -28,6 +28,8 @@ public static class RegistryExtension
 
     private static void ServiceRegistry(IServiceCollection serviceCollection)
     {
-        serviceCollection.AddTransient<IUserDalService, UserDalService>();
+        serviceCollection.AddTransient<IUserDalService, UserDalService>()
+            .AddTransient<ICertificateDalService, CertificateDalService>()
+            .AddTransient<IClientDalService, ClientDalService>();
     }
 }
