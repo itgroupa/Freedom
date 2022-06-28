@@ -1,0 +1,20 @@
+﻿@using Freedom.Auth.Web.Enums
+
+@if (Type == InputType.Text)
+{
+    <input type="text" placeholder="@Title"/>
+}
+else
+{
+    <input type="password" placeholder="@Title"/>
+}
+
+@code {
+
+    [Parameter]
+    public InputType Type { get; set; }
+
+    [Parameter]
+    public string Title { get; set; } = null!;
+
+}

@@ -61,6 +61,15 @@ namespace Freedom.Auth.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forgot password.
+        /// </summary>
+        internal static string ForgotPassword {
+            get {
+                return ResourceManager.GetString("ForgotPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string Login {
@@ -79,6 +88,15 @@ namespace Freedom.Auth.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create account.
+        /// </summary>
+        internal static string Registration {
+            get {
+                return ResourceManager.GetString("Registration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign in.
         /// </summary>
         internal static string SignIn {
@@ -88,11 +106,29 @@ namespace Freedom.Auth.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Authoruzation.
+        /// </summary>
+        internal static string TitleAuthorization {
+            get {
+                return ResourceManager.GetString("TitleAuthorization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create account.
+        /// </summary>
+        internal static string TitleCreateAccount {
+            get {
+                return ResourceManager.GetString("TitleCreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Freedom.
         /// </summary>
-        internal static string SiteTitle {
+        internal static string TitleSite {
             get {
-                return ResourceManager.GetString("SiteTitle", resourceCulture);
+                return ResourceManager.GetString("TitleSite", resourceCulture);
             }
         }
     }

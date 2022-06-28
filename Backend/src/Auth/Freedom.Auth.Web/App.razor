@@ -1,23 +1,30 @@
-﻿@using Freedom.Auth.Web.Utils
-
-<CascadingAuthenticationState>
-    <Router AppAssembly="@typeof(App).Assembly">
-        <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData"
-                                DefaultLayout="@typeof(MainLayout)"/>
-        </Found>
-        <NotFound>
-            <AuthorizeView>
-                <Authorized>
-                    <LayoutView Layout="@typeof(MainLayout)">
+﻿<CascadingAuthenticationState>
+    <AuthorizeView>
+        <Authorized>
+            <Router AppAssembly="@typeof(App).Assembly">
+                <Found Context="routeData">
+                    <AuthorizeRouteView RouteData="@routeData"
+                                        DefaultLayout="@typeof(AuthorizedLayout)"/>
+                </Found>
+                <NotFound>
+                    <LayoutView Layout="@typeof(UnAuthorizedLayout)">
                         <p>Sorry, there's nothing at this address.</p>
                     </LayoutView>
-                </Authorized>
-                <NotAuthorized>
-                    <PageTitle>@SiteTitleLocal.GetTitle(Translate.SignIn)</PageTitle>
-                    <Authentificate/>
-                </NotAuthorized>
-            </AuthorizeView>
-        </NotFound>
-    </Router>
+                </NotFound>
+            </Router>
+        </Authorized>
+        <NotAuthorized>
+            <Router AppAssembly="@typeof(App).Assembly">
+                <Found Context="routeData">
+                    <RouteView RouteData="@routeData"
+                               DefaultLayout="@typeof(UnAuthorizedLayout)"/>
+                </Found>
+                <NotFound>
+                    <LayoutView Layout="@typeof(UnAuthorizedLayout)">
+                        <p>Sorry, there's nothing at this address.</p>
+                    </LayoutView>
+                </NotFound>
+            </Router>
+        </NotAuthorized>
+    </AuthorizeView>
 </CascadingAuthenticationState>

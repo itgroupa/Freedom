@@ -1,0 +1,17 @@
+﻿@page "/"
+@using Freedom.Auth.Web.Enums
+@using Freedom.Auth.Web.Utils
+@using Freedom.Auth.Web.Const
+
+<PageTitle>@SiteTitleLocal.GetTitle(Translate.TitleAuthorization)</PageTitle>
+<Container Orientation="OrientationType.Vertical">
+    <div class="logo"></div>
+    <p class="title">@Translate.TitleAuthorization</p>
+    <Input type="@InputType.Text" Title="@Translate.Login"/>
+    <Input type="@InputType.Password" Title="@Translate.Password"/>
+    <button><div class="logo"></div>@Translate.SignIn</button>
+    <div class="row">
+        <NavLink href="@Urls.ForgotPassword">@Translate.ForgotPassword</NavLink>
+        <NavLink href="@Urls.Registration">@Translate.Registration</NavLink>
+    </div>
+</Container>

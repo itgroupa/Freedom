@@ -1,4 +1,5 @@
-﻿@namespace Freedom.Auth.Web.Pages
+﻿@using Microsoft.AspNetCore.Components.Web
+@namespace Freedom.Auth.Web.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <!DOCTYPE html>
@@ -8,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <base href="~/"/>
     <link href="css/site.css" rel="stylesheet"/>
+    <link href="Freedom.Auth.Web.styles.css" rel="stylesheet"/>
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
 @RenderBody()
