@@ -1,9 +1,10 @@
-﻿@inherits LayoutComponentBase
+﻿<h3>AuthorizedLayout</h3>
 
-<h3>AuthorizedLayout</h3>
-
-@Body
+@ChildContent
 
 @code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
 
 }

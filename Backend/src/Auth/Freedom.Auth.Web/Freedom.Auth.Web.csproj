@@ -27,4 +27,9 @@
       </Compile>
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Components\Container.razor" />
+      <_ContentIncludedByDefault Remove="Components\Input.razor" />
+    </ItemGroup>
+
 </Project>

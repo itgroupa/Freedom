@@ -1,0 +1,15 @@
+﻿@import "./colors.css";
+
+.icon.facebook {
+    background-color: var(--blue-color);
+    mask-image: url("../images/facebook.svg");
+    -webkit-mask-image: url("../images/facebook.svg");
+}
+.icon.google {
+    background-image: url("../images/google.svg");
+}
+.icon.login {
+    background-color: var(--blue-color);
+    mask-image: url("../images/login.svg");
+    -webkit-mask-image: url("../images/login.svg");
+}

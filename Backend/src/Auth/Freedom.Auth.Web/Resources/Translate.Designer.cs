@@ -79,6 +79,15 @@ namespace Freedom.Auth.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Or.
+        /// </summary>
+        internal static string Or {
+            get {
+                return ResourceManager.GetString("Or", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         internal static string Password {

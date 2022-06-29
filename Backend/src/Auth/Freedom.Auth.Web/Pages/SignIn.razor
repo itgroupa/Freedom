@@ -1,17 +1,35 @@
 ﻿@page "/"
-@using Freedom.Auth.Web.Enums
 @using Freedom.Auth.Web.Utils
 @using Freedom.Auth.Web.Const
 
 <PageTitle>@SiteTitleLocal.GetTitle(Translate.TitleAuthorization)</PageTitle>
-<Container Orientation="OrientationType.Vertical">
-    <div class="logo"></div>
-    <p class="title">@Translate.TitleAuthorization</p>
-    <Input type="@InputType.Text" Title="@Translate.Login"/>
-    <Input type="@InputType.Password" Title="@Translate.Password"/>
-    <button><div class="logo"></div>@Translate.SignIn</button>
-    <div class="row">
-        <NavLink href="@Urls.ForgotPassword">@Translate.ForgotPassword</NavLink>
-        <NavLink href="@Urls.Registration">@Translate.Registration</NavLink>
-    </div>
-</Container>
+<AuthorizeView>
+    <NotAuthorized>
+        <div class="container column">
+            <div class="chapter row">
+                <div class="logo"></div>
+                <p class="title">@Translate.TitleAuthorization</p>
+            </div>
+            <label>
+                <input type="text" placeholder="@Translate.Login"/>
+            </label>
+            <label>
+                <input type="password" placeholder="@Translate.Password"/>
+            </label>
+            <button class="icon with-text">
+                <span class="icon login"></span> @Translate.SignIn
+            </button>
+            <div class="column center">
+                <p class="text">@Translate.Or</p>
+                <div class="row">
+                    <button class="icon"><span class="icon facebook"></span></button>
+                    <button class="icon"><span class="icon google"></span></button>
+                </div>
+            </div>
+            <div class="nav-links row">
+                <NavLink class="all-width" href="@Urls.ForgotPassword">@Translate.ForgotPassword</NavLink>
+                <NavLink href="@Urls.Registration">@Translate.Registration</NavLink>
+            </div>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>

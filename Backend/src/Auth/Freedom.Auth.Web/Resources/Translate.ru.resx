@@ -35,4 +35,7 @@
     <data name="Registration" xml:space="preserve">
         <value>Создать акаунт</value>
     </data>
+    <data name="Or" xml:space="preserve">
+        <value>Или</value>
+    </data>
 </root>

@@ -42,4 +42,7 @@
     <data name="Registration" xml:space="preserve">
         <value>Create account</value>
     </data>
+    <data name="Or" xml:space="preserve">
+        <value>Or</value>
+    </data>
 </root>

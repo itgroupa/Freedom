@@ -1,30 +1,11 @@
 ﻿<CascadingAuthenticationState>
-    <AuthorizeView>
-        <Authorized>
-            <Router AppAssembly="@typeof(App).Assembly">
-                <Found Context="routeData">
-                    <AuthorizeRouteView RouteData="@routeData"
-                                        DefaultLayout="@typeof(AuthorizedLayout)"/>
-                </Found>
-                <NotFound>
-                    <LayoutView Layout="@typeof(UnAuthorizedLayout)">
-                        <p>Sorry, there's nothing at this address.</p>
-                    </LayoutView>
-                </NotFound>
-            </Router>
-        </Authorized>
-        <NotAuthorized>
-            <Router AppAssembly="@typeof(App).Assembly">
-                <Found Context="routeData">
-                    <RouteView RouteData="@routeData"
-                               DefaultLayout="@typeof(UnAuthorizedLayout)"/>
-                </Found>
-                <NotFound>
-                    <LayoutView Layout="@typeof(UnAuthorizedLayout)">
-                        <p>Sorry, there's nothing at this address.</p>
-                    </LayoutView>
-                </NotFound>
-            </Router>
-        </NotAuthorized>
-    </AuthorizeView>
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData"
+                                DefaultLayout="@typeof(IndexLayout)"/>
+        </Found>
+        <NotFound>
+            <p>Sorry, there's nothing at this address.</p>
+        </NotFound>
+    </Router>
 </CascadingAuthenticationState>
