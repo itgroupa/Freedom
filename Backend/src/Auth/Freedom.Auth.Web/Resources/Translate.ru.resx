@@ -47,4 +47,10 @@
     <data name="Remember" xml:space="preserve">
         <value>Напомнить</value>
     </data>
+    <data name="ToLongField" xml:space="preserve">
+        <value>Слишком длинное поле</value>
+    </data>
+    <data name="RequiredField" xml:space="preserve">
+        <value>Обязательное поле</value>
+    </data>
 </root>

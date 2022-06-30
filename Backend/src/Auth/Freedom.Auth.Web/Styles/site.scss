@@ -128,3 +128,8 @@ button.icon {
 button.with-text .icon {
   margin-right: 10px;
 }
+
+.validation-errors {
+  color: $errors-text-color;
+  opacity: 0.5;
+}

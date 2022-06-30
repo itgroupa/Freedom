@@ -1,6 +1,8 @@
 using Freedom.Auth.Business;
 using Freedom.Auth.Cache;
 using Freedom.Auth.Dal;
+using Freedom.Auth.Web.Interfaces;
+using Freedom.Auth.Web.Services;
 using Freedom.Common.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,8 @@ builder.Services.AddMapperFiles();
 builder.Services.AddCache(redisConfiguration);
 builder.Services.AddDal(mongoConfiguration);
 builder.Services.AddBusiness();
+
+builder.Services.AddTransient<IUserViewService, UserViewService>();
 
 var app = builder.Build();
 

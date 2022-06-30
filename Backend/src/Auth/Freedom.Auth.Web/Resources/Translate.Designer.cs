@@ -142,6 +142,15 @@ namespace Freedom.Auth.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Required field.
+        /// </summary>
+        internal static string RequiredField {
+            get {
+                return ResourceManager.GetString("RequiredField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign in.
         /// </summary>
         internal static string SignIn {
@@ -165,6 +174,15 @@ namespace Freedom.Auth.Web.Resources {
         internal static string TitleSite {
             get {
                 return ResourceManager.GetString("TitleSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To long.
+        /// </summary>
+        internal static string ToLongField {
+            get {
+                return ResourceManager.GetString("ToLongField", resourceCulture);
             }
         }
     }
