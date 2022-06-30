@@ -1,0 +1,35 @@
+﻿@import "./colors.scss";
+
+.icon.facebook {
+  background-color: $blue-color;
+  mask-image: url("../images/facebook.svg");
+  -webkit-mask-image: url("../images/facebook.svg");
+}
+
+.icon.google {
+  background-image: url("../images/google.svg");
+}
+
+.icon.login {
+  background-color: $blue-color;
+  mask-image: url("../images/login.svg");
+  -webkit-mask-image: url("../images/login.svg");
+}
+
+.icon.human {
+  background-color: $blue-color;
+  mask-image: url("../images/human.svg");
+  -webkit-mask-image: url("../images/human.svg");
+}
+
+.icon.add-user {
+  background-color: $blue-color;
+  mask-image: url("../images/add-user.svg");
+  -webkit-mask-image: url("../images/add-user.svg");
+}
+
+.icon.brain {
+  background-color: $blue-color;
+  mask-image: url("../images/brain.svg");
+  -webkit-mask-image: url("../images/brain.svg");
+}

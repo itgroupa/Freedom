@@ -1,0 +1,39 @@
+﻿.container {
+  margin: 10% auto;
+  width: 350px;
+
+  .chapter {
+    align-items: center;
+    padding-bottom: 30px;
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      margin-right: 10px;
+    }
+
+    .title {
+      font-size: 24px;
+    }
+  }
+
+  .nav-links {
+    padding-top: 20px;
+  }
+
+  .center {
+    padding-top: 30px;
+
+    .row {
+      padding-top: 20px;
+
+      button:first-child {
+        margin-right: 20px;
+      }
+
+      button:last-child {
+        margin-left: 20px;
+      }
+    }
+  }
+}

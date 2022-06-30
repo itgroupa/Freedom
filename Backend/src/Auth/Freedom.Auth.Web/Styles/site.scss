@@ -1,0 +1,130 @@
+@import "./colors.scss";
+@import "./animations.scss";
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+body, div, p, h1, h2, h3, h4 input, button {
+  margin: 0px;
+  padding: 0px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+body {
+  background-color: $background-color;
+}
+
+body, p, input, select, textarea, button {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.2px;
+  font-size: 16px;
+}
+
+div, p {
+  color: $text-color;
+  text-shadow: $text-shadow-color;
+}
+
+.text {
+  color: $simple-text-color;
+}
+
+a {
+  color: $link-color;
+}
+
+a:disabled {
+  color: $text-color;
+}
+
+.container {
+  box-shadow: $container-shadows;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+button, input {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: $background-color;
+  text-shadow: $text-shadow-color;
+}
+
+input {
+  margin-right: 8px;
+  box-shadow: $input-shadow-color;
+  width: 100%;
+  box-sizing: border-box;
+  transition: $controls-animation;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input:focus {
+  box-shadow: $input-active-shadows;
+}
+
+button {
+  color: #61677C;
+  box-shadow: $container-shadows;
+  transition: $controls-animation;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+}
+
+button:hover {
+  box-shadow: $button-hover-color;
+}
+
+button:active {
+  box-shadow: $input-active-shadows;
+}
+
+.all-width {
+  flex: 1;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+span.icon {
+  display: block;
+  width: 36px;
+  height: 36px;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+button.icon {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.with-text .icon {
+  margin-right: 10px;
+}

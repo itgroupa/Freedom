@@ -27,9 +27,10 @@
       </Compile>
     </ItemGroup>
 
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Components\Container.razor" />
-      <_ContentIncludedByDefault Remove="Components\Input.razor" />
-    </ItemGroup>
+    <!-- Compile SCSS files into CSS -->
+    <Target Name="CompileGlobalSass" BeforeTargets="Compile">
+        <Message Text="Compiling global SCSS files" Importance="high" />
+        <Exec Command="npm run sass -- --style=compressed --no-source-map  Styles:wwwroot/css" />
+    </Target>
 
 </Project>
