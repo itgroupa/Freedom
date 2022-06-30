@@ -27,5 +27,9 @@ public class UserViewServiceTests
         var result = await _service.AddAsync(newUser, Providers.Freedom);
 
         Assert.IsNotNull(result);
+
+        var result2 = await _service.GetAsync(0, 10);
+
+        Assert.IsTrue(result2.Count != 0);
     }
 }

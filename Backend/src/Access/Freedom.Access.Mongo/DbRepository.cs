@@ -39,7 +39,7 @@ internal class DbRepository : IDbRepository
     {
         var collection = await GetCollectionAsync<T>();
 
-        var result = await collection.CountDocumentsAsync(where);
+        var result = await collection.CountDocumentsAsync(where ?? (r => true));
 
         return result;
     }
@@ -48,12 +48,12 @@ internal class DbRepository : IDbRepository
     {
         var collection = await GetCollectionAsync<T>();
 
-        var result = await collection.Find(where).Skip(page * size).Limit(size).ToListAsync();
+        var result = await collection.Find(where ?? (r => true)).Skip(page * size).Limit(size).ToListAsync();
 
         return result.ToArray();
     }
 
-    public async Task DeleteOneAsync<T>(Expression<Func<T, bool>>? where = null) where T : class
+    public async Task DeleteOneAsync<T>(Expression<Func<T, bool>> where) where T : class
     {
         var collection = await GetCollectionAsync<T>();
 

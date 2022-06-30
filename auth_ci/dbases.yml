@@ -22,9 +22,9 @@ services:
             MONGO_INITDB_ROOT_USERNAME: root
             MONGO_INITDB_ROOT_PASSWORD: password
             MONGO_INITDB_DATABASE: freedom_auth_db
-            ME_CONFIG_MONGODB_URL: mongodb://localhost:27017
+            ME_CONFIG_MONGODB_URL: mongodb://localhost:2002
         ports:
-            - "27017:27017"
+            - "2002:27017"
         networks:
             - freedom_auth
 

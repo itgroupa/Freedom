@@ -69,11 +69,11 @@ internal class UserDalService : IUserDalService
 
         var request = _mapper.Map<User>(model);
 
+        request.Role = countUser == 0 ? Roles.Admin : Roles.User;
+
         var dbModel = await _dbRepository.AddAsync(request);
 
         var result = _mapper.Map<UserData>(dbModel);
-
-        result.Role = countUser == 0 ? Roles.Admin : Roles.User;
 
         return result;
     }

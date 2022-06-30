@@ -8,23 +8,23 @@
 
 <PageTitle>@SiteTitleLocal.GetTitle(Translate.CreateAccount)</PageTitle>
 <div class="container">
-    <EditForm Model="form" OnValidSubmit="HandleValidSubmit" class="column">
+    <EditForm Model="_form" OnValidSubmit="HandleValidSubmit" class="column">
         <DataAnnotationsValidator/>
         <div class="chapter row">
             <span class="logo icon add-user"></span>
             <p class="title">@Translate.CreateAccount</p>
         </div>
         <label>
-            <input type="text" placeholder="@Translate.Name" @bind="form.Name"/>
+            <input type="text" placeholder="@Translate.Name" @bind="_form.Name"/>
         </label>
         <label>
-            <input type="text" placeholder="@Translate.Email" @bind="form.Email"/>
+            <input type="text" placeholder="@Translate.Email" @bind="_form.Email"/>
         </label>
         <label>
-            <input type="password" placeholder="@Translate.Password" @bind="form.Password"/>
+            <input type="password" placeholder="@Translate.Password" @bind="_form.Password"/>
         </label>
         <label>
-            <input type="password" placeholder="@Translate.ConfirmPassword" @bind="form.ConfirmedPassword"/>
+            <input type="password" placeholder="@Translate.ConfirmPassword" @bind="_form.ConfirmedPassword"/>
         </label>
         <ValidationSummary/>
         <button type="submit" class="icon with-text">
@@ -38,11 +38,11 @@
 </div>
 
 @code {
-    private AddUserView form = new();
+    private readonly AddUserView _form = new();
 
     private async Task HandleValidSubmit()
     {
-        var result = await _service.AddAsync(form, Providers.Freedom);
+        await _service.AddAsync(_form, Providers.Freedom);
     }
 
 }
