@@ -27,10 +27,15 @@
       </Compile>
     </ItemGroup>
 
+    <ItemGroup>
+        <ComponentScssFiles Include="**/*/*.scss" Exclude="node_modules/**;wwwroot/**;Styles/**" />
+    </ItemGroup>
+
     <!-- Compile SCSS files into CSS -->
     <Target Name="CompileGlobalSass" BeforeTargets="Compile">
         <Message Text="Compiling global SCSS files" Importance="high" />
         <Exec Command="npm run sass -- --style=compressed --no-source-map  Styles:wwwroot/css" />
+        <Exec Command="npm run sass -- --style=compressed --no-source-map --load-path=Styles/Core %(ComponentScssFiles.Identity) %(relativedir)%(filename).css" />
     </Target>
 
 </Project>
