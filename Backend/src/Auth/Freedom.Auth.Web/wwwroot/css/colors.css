@@ -1,3 +1,12 @@
 ﻿:root {
     --blue-color: #007fff;
+    --input-active-shadows: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    --background-color: #EBECF0;
+    --container-shadows: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    --button-hover-color: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+    --input-shadow-color: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    --text-shadow-color: 1px 1px 0 #FFF;
+    --text-color: #BABECC;
+    --simple-text-color: #7a7c83;
+    --link-color: #61677C;
 }

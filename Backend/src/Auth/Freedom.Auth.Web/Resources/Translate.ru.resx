@@ -11,8 +11,8 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="Login" xml:space="preserve">
-        <value>Логин</value>
+    <data name="Name" xml:space="preserve">
+        <value>Имя</value>
     </data>
     <data name="Password" xml:space="preserve">
         <value>Пароль</value>
@@ -23,19 +23,28 @@
     <data name="SignIn" xml:space="preserve">
         <value>Вход</value>
     </data>
-    <data name="TitleCreateAccount" xml:space="preserve">
-        <value>Создать акаунт</value>
-    </data>
     <data name="TitleAuthorization" xml:space="preserve">
         <value>Авторизация</value>
     </data>
     <data name="ForgotPassword" xml:space="preserve">
         <value>Забыл пароль</value>
     </data>
-    <data name="Registration" xml:space="preserve">
+    <data name="CreateAccount" xml:space="preserve">
         <value>Создать акаунт</value>
     </data>
     <data name="Or" xml:space="preserve">
         <value>Или</value>
+    </data>
+    <data name="ConfirmPassword" xml:space="preserve">
+        <value>Подтвердите пароль</value>
+    </data>
+    <data name="Email" xml:space="preserve">
+        <value>Email</value>
+    </data>
+    <data name="Registration" xml:space="preserve">
+        <value>Регистрация</value>
+    </data>
+    <data name="Remember" xml:space="preserve">
+        <value>Напомнить</value>
     </data>
 </root>

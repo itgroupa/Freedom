@@ -7,11 +7,11 @@
     <NotAuthorized>
         <div class="container column">
             <div class="chapter row">
-                <div class="logo"></div>
+                <span class="logo icon human"></span>
                 <p class="title">@Translate.TitleAuthorization</p>
             </div>
             <label>
-                <input type="text" placeholder="@Translate.Login"/>
+                <input type="text" placeholder="@Translate.Email"/>
             </label>
             <label>
                 <input type="password" placeholder="@Translate.Password"/>
@@ -27,8 +27,8 @@
                 </div>
             </div>
             <div class="nav-links row">
-                <NavLink class="all-width" href="@Urls.ForgotPassword">@Translate.ForgotPassword</NavLink>
-                <NavLink href="@Urls.Registration">@Translate.Registration</NavLink>
+                <NavLink class="all-width" href="@Urls.Registration">@Translate.CreateAccount</NavLink>
+                <NavLink href="@Urls.ForgotPassword">@Translate.ForgotPassword</NavLink>
             </div>
         </div>
     </NotAuthorized>

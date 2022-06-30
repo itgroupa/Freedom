@@ -18,8 +18,8 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="Login" xml:space="preserve">
-        <value>Login</value>
+    <data name="Name" xml:space="preserve">
+        <value>Name</value>
     </data>
     <data name="Password" xml:space="preserve">
         <value>Password</value>
@@ -30,19 +30,28 @@
     <data name="SignIn" xml:space="preserve">
         <value>Sign in</value>
     </data>
-    <data name="TitleCreateAccount" xml:space="preserve">
-        <value>Create account</value>
-    </data>
     <data name="TitleAuthorization" xml:space="preserve">
-        <value>Authoruzation</value>
+        <value>Authorization</value>
     </data>
     <data name="ForgotPassword" xml:space="preserve">
         <value>Forgot password</value>
     </data>
-    <data name="Registration" xml:space="preserve">
+    <data name="CreateAccount" xml:space="preserve">
         <value>Create account</value>
     </data>
     <data name="Or" xml:space="preserve">
         <value>Or</value>
+    </data>
+    <data name="ConfirmPassword" xml:space="preserve">
+        <value>Confirm password</value>
+    </data>
+    <data name="Email" xml:space="preserve">
+        <value>Email</value>
+    </data>
+    <data name="Registration" xml:space="preserve">
+        <value>Registration</value>
+    </data>
+    <data name="Remember" xml:space="preserve">
+        <value>Remember</value>
     </data>
 </root>

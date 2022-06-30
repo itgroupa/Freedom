@@ -1,3 +1,5 @@
+@import "./colors.css";
+
 body {
     display: flex;
     flex-direction: column;
@@ -19,7 +21,7 @@ body, div, p, h1, h2, h3, h4 input, button {
 }
 
 body {
-    background-color: #EBECF0;
+    background-color: var(--background-color);
 }
 
 body, p, input, select, textarea, button {
@@ -29,22 +31,22 @@ body, p, input, select, textarea, button {
 }
 
 div, p {
-    color: #BABECC;
-    text-shadow: 1px 1px 1px #FFF;
+    color: var(--text-color);
+    text-shadow: var(--text-shadow-color);
 }
 .text {
-    color: #7a7c83;
+    color: var(--simple-text-color);
 }
 
 a {
-    color: #61677C;
+    color: var(--link-color);
 }
 a:disabled {
-    color: #BABECC;
+    color: var(--text-color);
 }
 
 .container {
-    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    box-shadow: var(--container-shadows);
     border-radius: 16px;
     padding: 16px;
 }
@@ -60,13 +62,13 @@ button, input {
     font-size: 16px;
     border-radius: 320px;
     padding: 16px;
-    background-color: #EBECF0;
-    text-shadow: 1px 1px 0 #FFF;
+    background-color: var(--background-color);
+    text-shadow: var(--text-shadow-color);
 }
 
 input {
     margin-right: 8px;
-    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    box-shadow: var(--input-shadow-color);
     width: 100%;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
@@ -74,22 +76,22 @@ input {
     -webkit-appearance: none;
 }
 input:focus {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    box-shadow: var(--input-active-shadows);
 }
 
 button {
     color: #61677C;
-    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    box-shadow: var(--container-shadows);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     font-weight: 600;
     display: flex;
 }
 button:hover {
-    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+    box-shadow: var(--button-hover-color);
 }
 button:active {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    box-shadow: var(--input-active-shadows);
 }
 .all-width {
     flex: 1;

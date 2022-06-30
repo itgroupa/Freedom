@@ -61,6 +61,33 @@ namespace Freedom.Auth.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm password.
+        /// </summary>
+        internal static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create account.
+        /// </summary>
+        internal static string CreateAccount {
+            get {
+                return ResourceManager.GetString("CreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forgot password.
         /// </summary>
         internal static string ForgotPassword {
@@ -70,11 +97,11 @@ namespace Freedom.Auth.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Name.
         /// </summary>
-        internal static string Login {
+        internal static string Name {
             get {
-                return ResourceManager.GetString("Login", resourceCulture);
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
         
@@ -97,11 +124,20 @@ namespace Freedom.Auth.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create account.
+        ///   Looks up a localized string similar to Registration.
         /// </summary>
         internal static string Registration {
             get {
                 return ResourceManager.GetString("Registration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember.
+        /// </summary>
+        internal static string Remember {
+            get {
+                return ResourceManager.GetString("Remember", resourceCulture);
             }
         }
         
@@ -115,20 +151,11 @@ namespace Freedom.Auth.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Authoruzation.
+        ///   Looks up a localized string similar to Authorization.
         /// </summary>
         internal static string TitleAuthorization {
             get {
                 return ResourceManager.GetString("TitleAuthorization", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Create account.
-        /// </summary>
-        internal static string TitleCreateAccount {
-            get {
-                return ResourceManager.GetString("TitleCreateAccount", resourceCulture);
             }
         }
         
