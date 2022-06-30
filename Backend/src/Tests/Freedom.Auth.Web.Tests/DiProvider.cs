@@ -1,7 +1,6 @@
 ﻿using Freedom.Auth.Business;
 using Freedom.Auth.Cache;
 using Freedom.Auth.Dal;
-using Freedom.Auth.DataSchema;
 using Freedom.Common.Mapper;
 using Freedom.Tests.Utils;
 using Microsoft.Extensions.DependencyInjection;

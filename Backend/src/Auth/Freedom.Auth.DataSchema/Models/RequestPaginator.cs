@@ -9,5 +9,9 @@ public class RequestPaginator
     {
     }
 
-    public RequestPaginator(int page, int size) => (page, size) = (Page, Size);
+    public RequestPaginator(int page, int size)
+    {
+        Page = page;
+        Size = size;
+    }
 }
