@@ -1,4 +1,4 @@
-﻿namespace Freedom.Auth.Web.Models;
+﻿namespace Freedom.Auth.Web.Models.Users;
 
 public class UserView
 {

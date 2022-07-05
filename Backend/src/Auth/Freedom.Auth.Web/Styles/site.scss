@@ -85,12 +85,27 @@ input:focus {
 }
 
 button {
-  color: #61677C;
+  color: $button-common-color;
   box-shadow: $container-shadows;
   transition: $controls-animation;
   cursor: pointer;
   font-weight: 600;
   display: flex;
+}
+
+button:disabled {
+  color: $button-common-color;
+  box-shadow: $container-shadows;
+}
+
+button:disabled:hover {
+  color: $button-common-color;
+  box-shadow: $container-shadows;
+}
+
+button:disabled:active {
+  color: $button-common-color;
+  box-shadow: $container-shadows;
 }
 
 button:hover {

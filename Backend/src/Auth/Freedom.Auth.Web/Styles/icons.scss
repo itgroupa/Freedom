@@ -16,6 +16,12 @@
   -webkit-mask-image: url("../images/login.svg");
 }
 
+.icon.spinner {
+  background-color: $blue-color;
+  mask-image: url("../images/spinner.svg");
+  -webkit-mask-image: url("../images/spinner.svg");
+}
+
 .icon.human {
   background-color: $blue-color;
   mask-image: url("../images/human.svg");

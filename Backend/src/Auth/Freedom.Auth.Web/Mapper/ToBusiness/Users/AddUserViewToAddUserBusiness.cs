@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Freedom.Auth.Business.Models.Users;
-using Freedom.Auth.Web.Models;
+using Freedom.Auth.Web.Models.Users;
 
 namespace Freedom.Auth.Web.Mapper.ToBusiness.Users;
 

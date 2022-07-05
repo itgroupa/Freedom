@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Freedom.Auth.Web.Models.Captcha;
 
-namespace Freedom.Auth.Web.Models;
+namespace Freedom.Auth.Web.Models.Users;
 
-public class AddUserView
+public class AddUserView : CaptchaBase
 {
     [Required]
     [StringLength(50)]

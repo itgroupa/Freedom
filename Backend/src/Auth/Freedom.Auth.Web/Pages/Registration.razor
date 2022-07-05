@@ -1,10 +1,13 @@
 ﻿@page "/registration"
 @using Freedom.Auth.Web.Utils
 @using Freedom.Auth.Web.Const
-@using Freedom.Auth.Web.Models
 @using Freedom.Auth.Web.Interfaces
+@using Freedom.Auth.Web.Models.Users
+@using Microsoft.AspNetCore.Components
 
+@inject IJSRuntime _js
 @inject IUserViewService _service
+@inject NavigationManager _navigationManager
 
 <PageTitle>@SiteTitleLocal.GetTitle(Translate.CreateAccount)</PageTitle>
 <div class="container">
@@ -27,8 +30,8 @@
             <input type="password" placeholder="@Translate.ConfirmPassword" @bind="_form.ConfirmedPassword"/>
         </label>
         <ValidationSummary/>
-        <button type="submit" class="icon with-text">
-            <span class="icon login"></span> @Translate.Registration
+        <button type="submit" class="icon with-text" disabled="@_isLoading">
+            <span class="icon @ButtonClass()"></span> @Translate.Registration
         </button>
         <div class="nav-links row">
             <NavLink class="all-width" href="@Urls.BasePath">@Translate.SignIn</NavLink>
@@ -38,11 +41,22 @@
 </div>
 
 @code {
+    private bool _isLoading;
+    private string ButtonClass() => _isLoading ? "spinner" : "login";
+
     private readonly AddUserView _form = new();
 
     private async Task HandleValidSubmit()
     {
-        await _service.AddAsync(_form, Providers.Freedom);
-    }
+        _isLoading = true;
 
+        var captcha = await _js.InvokeAsync<string>("getCaptcha");
+        _form.Token = captcha;
+
+        await _service.AddAsync(_form, Providers.Freedom);
+
+        _isLoading = false;
+
+        _navigationManager.NavigateTo("/");
+    }
 }

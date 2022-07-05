@@ -1,5 +1,5 @@
 ﻿using Freedom.Auth.DataSchema.Models;
-using Freedom.Auth.Web.Models;
+using Freedom.Auth.Web.Models.Users;
 
 namespace Freedom.Auth.Web.Interfaces;
 
