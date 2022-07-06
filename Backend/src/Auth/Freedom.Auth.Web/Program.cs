@@ -24,6 +24,8 @@ var captchaConfiguration = builder.Configuration.GetSection("Captcha");
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddLocalization();
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
 
 builder.Services.AddMapperFiles();
 

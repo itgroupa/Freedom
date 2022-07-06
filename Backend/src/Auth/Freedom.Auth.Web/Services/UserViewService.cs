@@ -45,4 +45,18 @@ internal class UserViewService : IUserViewService
 
         return result;
     }
+
+    public async Task<UserView> SignInAsync(string email, string password)
+    {
+        var business = await _mediator.Send(new GetUserByEmailPasswordRequest(email, password));
+
+        var result = _mapper.Map<UserView>(business);
+
+        return result;
+    }
+
+    public async Task RememberEmailAsync(string email)
+    {
+        await Task.CompletedTask;
+    }
 }

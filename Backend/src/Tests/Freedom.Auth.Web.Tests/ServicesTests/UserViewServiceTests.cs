@@ -24,12 +24,16 @@ public class UserViewServiceTests
 
         var newUser = EntityGenerator.GenerateAddUserView();
 
-        var result = await _service.AddAsync(newUser, Providers.Freedom);
+        var addUserResult = await _service.AddAsync(newUser, Providers.Freedom);
 
-        Assert.IsNotNull(result);
+        Assert.IsNotNull(addUserResult);
 
-        var result2 = await _service.GetAsync(0, 10);
+        var pageUserResult = await _service.GetAsync(0, 10);
 
-        Assert.IsTrue(result2.Count != 0);
+        Assert.IsTrue(pageUserResult.Count != 0);
+
+        var signInResult = await _service.SignInAsync(newUser.Email, newUser.Password);
+
+        Assert.IsTrue(signInResult != default);
     }
 }

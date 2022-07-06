@@ -1,35 +1,64 @@
 ﻿@page "/"
 @using Freedom.Auth.Web.Utils
 @using Freedom.Auth.Web.Const
+@using Freedom.Auth.Web.Interfaces
+@using Freedom.Auth.Web.Models.Users
+
+@inject IJSRuntime _js
+@inject IUserViewService _service
 
 <PageTitle>@SiteTitleLocal.GetTitle(Translate.TitleAuthorization)</PageTitle>
-<AuthorizeView>
-    <NotAuthorized>
-        <div class="container column">
-            <div class="chapter row">
-                <span class="logo icon human"></span>
-                <p class="title">@Translate.TitleAuthorization</p>
-            </div>
-            <label>
-                <input type="text" placeholder="@Translate.Email"/>
-            </label>
-            <label>
-                <input type="password" placeholder="@Translate.Password"/>
-            </label>
-            <button class="icon with-text">
-                <span class="icon login"></span> @Translate.SignIn
-            </button>
-            <div class="column center">
-                <p class="text">@Translate.Or</p>
-                <div class="row">
-                    <button class="icon"><span class="icon facebook"></span></button>
-                    <button class="icon"><span class="icon google"></span></button>
-                </div>
-            </div>
-            <div class="nav-links row">
-                <NavLink class="all-width" href="@Urls.Registration">@Translate.CreateAccount</NavLink>
-                <NavLink href="@Urls.ForgotPassword">@Translate.ForgotPassword</NavLink>
+<div class="container">
+    <EditForm Model="_form" OnValidSubmit="HandleValidSubmit" class="column">
+        <DataAnnotationsValidator/>
+        <div class="chapter row">
+            <span class="logo icon human"></span>
+            <p class="title">@Translate.TitleAuthorization</p>
+        </div>
+        <label>
+            <input type="text" placeholder="@Translate.Email" @bind="_form.Email"/>
+        </label>
+        <label>
+            <input type="password" placeholder="@Translate.Password" @bind="_form.Password"/>
+        </label>
+        <ValidationSummary/>
+        <button type="submit" class="icon with-text" disabled="@_isLoading">
+            <span class="icon @ButtonClass()"></span> @Translate.SignIn
+        </button>
+        <div class="column center">
+            <p class="text">@Translate.Or</p>
+            <div class="row">
+                <button class="icon">
+                    <span class="icon facebook"></span>
+                </button>
+                <button class="icon">
+                    <span class="icon google"></span>
+                </button>
             </div>
         </div>
-    </NotAuthorized>
-</AuthorizeView>
+        <div class="nav-links row">
+            <NavLink class="all-width" href="@Urls.Registration">@Translate.CreateAccount</NavLink>
+            <NavLink href="@Urls.ForgotPassword">@Translate.ForgotPassword</NavLink>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    private bool _isLoading;
+    private string ButtonClass() => _isLoading ? "spinner" : "login";
+
+    private readonly SignInView _form = new();
+
+    private async Task HandleValidSubmit()
+    {
+        _isLoading = true;
+
+        var captcha = await _js.InvokeAsync<string>("getCaptcha");
+        _form.Token = captcha;
+
+        await _service.SignInAsync(_form.Email, _form.Password);
+
+        _isLoading = false;
+    }
+
+}
