@@ -1,12 +1,16 @@
 using System.Net;
+using System.Security.Claims;
 using Freedom.Auth.Business;
 using Freedom.Auth.Cache;
 using Freedom.Auth.Dal;
 using Freedom.Auth.Web.Configurations;
+using Freedom.Auth.Web.Const;
 using Freedom.Auth.Web.Interfaces;
 using Freedom.Auth.Web.Services;
 using Freedom.Common.Mapper;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components.Authorization;
 
 var HttpClientHandler = () => new HttpClientHandler
 {
@@ -25,7 +29,21 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddLocalization();
 builder.Services.AddAuthentication();
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(config =>
+{
+    config.AddPolicy(Policies.AuthPolicy, policy =>
+    {
+        policy.RequireClaim(ClaimTypes.Role);
+        policy.RequireClaim(ClaimTypes.Email);
+        policy.RequireClaim(ClaimTypes.Name);
+        policy.RequireClaim(ClaimTypes.NameIdentifier);
+    });
+});
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddTransient<IAuthorizationService, FreedomAuthorizationService>();
+builder.Services.AddTransient<AuthenticationStateProvider, FreedomAuthenticationStateProvider>();
+builder.Services.AddTransient<ISessionService, SessionService>();
 
 builder.Services.AddMapperFiles();
 

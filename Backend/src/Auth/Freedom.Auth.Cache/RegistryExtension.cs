@@ -1,5 +1,6 @@
 ﻿using Freedom.Access.Redis;
 using Freedom.Auth.Cache.Services;
+using Freedom.Auth.DataSchema.Auth;
 using Freedom.Auth.DataSchema.Cache;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +31,7 @@ public static class RegistryExtension
     {
         serviceCollection.AddTransient<IUserCacheService, UserCacheService>()
             .AddTransient<ICertificateCacheService, CertificateCacheService>()
-            .AddTransient<IClientCacheService, ClientCacheService>();
+            .AddTransient<IClientCacheService, ClientCacheService>()
+            .AddTransient<IUserAuthService, UserAuthService>();
     }
 }

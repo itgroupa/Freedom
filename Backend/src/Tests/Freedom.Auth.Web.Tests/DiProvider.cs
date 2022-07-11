@@ -7,6 +7,8 @@ using Freedom.Auth.Web.Services;
 using Freedom.Auth.Web.Tests.Utils;
 using Freedom.Common.Mapper;
 using Freedom.Tests.Utils;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Freedom.Auth.Web.Tests;
@@ -31,6 +33,11 @@ public static class DiProvider
         collection.AddTransient<CaptchaResponseHandler>();
         collection.AddHttpClient<ICaptchaVerificationService, CaptchaVerificationService>()
             .AddHttpMessageHandler<CaptchaResponseHandler>();
+
+        collection.AddSingleton(FakeHttpContextBuilder.Build());
+        collection.AddTransient<IAuthorizationService, FreedomAuthorizationService>();
+        collection.AddTransient<AuthenticationStateProvider, FreedomAuthenticationStateProvider>();
+        collection.AddTransient<ISessionService, SessionService>();
 
 
         return collection

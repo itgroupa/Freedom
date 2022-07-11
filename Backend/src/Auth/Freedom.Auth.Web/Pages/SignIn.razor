@@ -3,9 +3,13 @@
 @using Freedom.Auth.Web.Const
 @using Freedom.Auth.Web.Interfaces
 @using Freedom.Auth.Web.Models.Users
+@using Microsoft.AspNetCore.Components;
+@using Freedom.Common.Json
 
 @inject IJSRuntime _js
 @inject IUserViewService _service
+@inject ILogger<SignIn> _logger
+
 
 <PageTitle>@SiteTitleLocal.GetTitle(Translate.TitleAuthorization)</PageTitle>
 <div class="container">
@@ -56,7 +60,9 @@
         var captcha = await _js.InvokeAsync<string>("getCaptcha");
         _form.Token = captcha;
 
-        await _service.SignInAsync(_form.Email, _form.Password);
+        var result = await _service.SignInAsync(_form);
+
+        _logger.LogInformation($"{result.Succeeded} - {JsonConvert.GetJsonObj(result.Failure)}");
 
         _isLoading = false;
     }

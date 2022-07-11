@@ -5,8 +5,10 @@ namespace Freedom.Common.Json;
 
 public static class JsonConvert
 {
-    public static string GetJsonObj<T>(T obj) where T : class
+    public static string GetJsonObj<T>(T? obj) where T : class
     {
+        if (obj == null) return string.Empty;
+
         return Newtonsoft.Json.JsonConvert.SerializeObject(obj, Formatting.Indented,
             new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
     }

@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Freedom.Auth.Web.Const;
 using Freedom.Auth.Web.Interfaces;
+using Freedom.Auth.Web.Models.Users;
 using Freedom.Auth.Web.Tests.Utils;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
@@ -32,8 +33,13 @@ public class UserViewServiceTests
 
         Assert.IsTrue(pageUserResult.Count != 0);
 
-        var signInResult = await _service.SignInAsync(newUser.Email, newUser.Password);
+        var signInResult = await _service.SignInAsync(new SignInView
+        {
+            Email = newUser.Email,
+            Password = newUser.Password,
+            Token = "token"
+        });
 
-        Assert.IsTrue(signInResult != default);
+        Assert.IsTrue(signInResult.Succeeded);
     }
 }
