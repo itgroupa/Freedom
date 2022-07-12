@@ -22,7 +22,8 @@ public static class FakeHttpContextBuilder
             new Claim(ClaimTypes.Name, "tester"),
             new Claim(ClaimTypes.Role, Roles.Admin)
         });
-        moqHttpContext.Setup(x => x.User.Identity.IsAuthenticated).Returns(true);
+        moqHttpContext.Setup(x => x.User.Identity!.IsAuthenticated).Returns(true);
+
         var moqHttpContextAccessor = new HttpContextAccessor
         {
             HttpContext = moqHttpContext.Object

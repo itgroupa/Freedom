@@ -3,6 +3,7 @@ using System.Security.Claims;
 using AutoMapper;
 using Freedom.Auth.Business.Models.Users;
 using Freedom.Auth.Business.Requests.Users;
+using Freedom.Auth.DataSchema.Auth;
 using Freedom.Auth.DataSchema.Models;
 using Freedom.Auth.Web.Const;
 using Freedom.Auth.Web.Interfaces;
@@ -18,14 +19,19 @@ internal class UserViewService : IUserViewService
     private readonly IMediator _mediator;
     private readonly ICaptchaVerificationService _verificationService;
     private readonly IAuthorizationService _authorizationService;
+    private readonly IUserAuthService _userAuthService;
+    private readonly ISessionService _sessionService;
 
     public UserViewService(IMapper mapper, IMediator mediator, ICaptchaVerificationService verificationService,
-        IAuthorizationService authorizationService)
+        IAuthorizationService authorizationService,
+        IUserAuthService userAuthService, ISessionService sessionService)
     {
         _mapper = mapper;
         _mediator = mediator;
         _verificationService = verificationService;
         _authorizationService = authorizationService;
+        _userAuthService = userAuthService;
+        _sessionService = sessionService;
     }
 
     public async Task<UserView> AddAsync(AddUserView model, string provider)
@@ -72,6 +78,17 @@ internal class UserViewService : IUserViewService
         })), Policies.AuthPolicy);
 
         return result;
+    }
+
+    public async Task LogoutAsync()
+    {
+        var sessionId = _sessionService.GetSessionId();
+        var remoteIp = _sessionService.GetRemoteIp();
+
+        if (string.IsNullOrEmpty(sessionId) || string.IsNullOrEmpty(remoteIp))
+            return;
+
+        await _userAuthService.LogoutAsync(sessionId, remoteIp);
     }
 
     public async Task RememberEmailAsync(ForgotEmailView model)

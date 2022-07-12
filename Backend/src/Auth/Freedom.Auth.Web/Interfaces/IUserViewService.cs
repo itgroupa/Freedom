@@ -9,5 +9,6 @@ public interface IUserViewService
     Task<UserView> AddAsync(AddUserView model, string provider);
     Task<ResponsePaginator<UserView>> GetAsync(int page, int size);
     Task<AuthorizationResult> SignInAsync(SignInView model);
+    Task LogoutAsync();
     Task RememberEmailAsync(ForgotEmailView model);
 }

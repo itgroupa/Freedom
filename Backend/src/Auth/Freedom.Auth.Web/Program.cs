@@ -8,7 +8,6 @@ using Freedom.Auth.Web.Const;
 using Freedom.Auth.Web.Interfaces;
 using Freedom.Auth.Web.Services;
 using Freedom.Common.Mapper;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Authorization;
 

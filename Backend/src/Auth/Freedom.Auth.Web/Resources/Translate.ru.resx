@@ -53,4 +53,7 @@
     <data name="RequiredField" xml:space="preserve">
         <value>Обязательное поле</value>
     </data>
+    <data name="ProfileTitle" xml:space="preserve">
+        <value>Профиль</value>
+    </data>
 </root>

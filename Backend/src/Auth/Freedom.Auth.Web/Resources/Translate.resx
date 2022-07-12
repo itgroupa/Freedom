@@ -60,4 +60,7 @@
     <data name="ToLongField" xml:space="preserve">
         <value>To long</value>
     </data>
+    <data name="ProfileTitle" xml:space="preserve">
+        <value>Profile</value>
+    </data>
 </root>
